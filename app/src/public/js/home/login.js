@@ -1,5 +1,7 @@
 "use strict";
 
+// const { json } = require("body-parser");
+
 const id = document.querySelector("#id"),
     psword = document.querySelector("#psword"),
     loginBtn = document.querySelector("#loginBtn");
@@ -12,5 +14,13 @@ function login() {
         id: id.value,
         psword: psword.value,
     };
-    console.log(req);
-}
+// console.log(req);
+
+    fetch("/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req),
+    });
+};

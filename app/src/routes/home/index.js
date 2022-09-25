@@ -14,4 +14,6 @@ router.get("/order", ctrl.output.order);
 router.get("/order_detail", ctrl.output.order_detail);
 router.get("/inpormation", ctrl.output.inpormation);
 
-module.exports = router
+router.post("/login", ctrl.process.login);
+
+module.exports = router;
